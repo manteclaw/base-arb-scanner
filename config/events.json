@@ -1,0 +1,72 @@
+{
+  "rpc_url": "${BASE_RPC_URL}",
+  "ws_url": "${BASE_WS_URL}",
+  "contracts": [
+    {
+      "name": "AaveGovernanceV3",
+      "address": "0x1140CB7cafAcC745771C2Ea31e7B5C653c5D0B80",
+      "event_types": [
+        "governance"
+      ],
+      "auto_execute": false,
+      "action_config": {
+        "auto_vote_own": true,
+        "auto_queue": false,
+        "auto_execute": false
+      }
+    },
+    {
+      "name": "UniswapGovernorBravo",
+      "address": "0x408ED6354d4973f66138C91495f4fE8fdB1D17a2",
+      "event_types": [
+        "governance"
+      ],
+      "auto_execute": false,
+      "action_config": {
+        "auto_vote_own": true
+      }
+    },
+    {
+      "name": "AerodromeGauge_WETH_USDC",
+      "address": "0x0000000000000000000000000000000000000000",
+      "event_types": [
+        "pool_rewards"
+      ],
+      "auto_execute": false,
+      "action_config": {
+        "min_reward_threshold": 10000000000000000,
+        "reward_token": "0x3f5bF3EdAc59d650D8fDf9657a71F2f904A3a4Ee"
+      }
+    },
+    {
+      "name": "TeamVesting",
+      "address": "0x0000000000000000000000000000000000000000",
+      "event_types": [
+        "vesting"
+      ],
+      "auto_execute": false,
+      "action_config": {
+        "release_function": "release"
+      }
+    },
+    {
+      "name": "TokenPresale",
+      "address": "0x0000000000000000000000000000000000000000",
+      "event_types": [
+        "presale"
+      ],
+      "auto_execute": false,
+      "action_config": {
+        "auto_buy": false,
+        "max_eth": "0.1"
+      }
+    }
+  ],
+  "global_settings": {
+    "max_gas_usd": 0.05,
+    "eth_price_usd": 3000,
+    "poll_interval_seconds": 15,
+    "block_range_max": 100,
+    "discord_webhook": ""
+  }
+}
